@@ -9,6 +9,9 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: Text(
           "Login Page",
+          style: TextStyle(
+            fontFamily: "poppins",
+          ),
         ),
       ),
     );
