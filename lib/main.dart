@@ -18,6 +18,7 @@ class Home extends StatelessWidget {
           "Hello World",
           style: TextStyle(
             fontSize: 20.0,
+            fontFamily: "poppins",
             fontWeight: FontWeight.bold,
           ),
         ),
