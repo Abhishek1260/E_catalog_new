@@ -20,9 +20,6 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text(
           "Welcome to $days of Flutter with $name",
-          style: const TextStyle(
-            fontFamily: "poppins",
-          ),
         ),
       ),
       drawer: const Drawer(),

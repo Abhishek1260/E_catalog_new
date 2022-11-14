@@ -9,6 +9,7 @@ void main() {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
+        fontFamily: "poppins",
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
