@@ -1,28 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_17/home_page.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: "Flutter 17",
-    home: Home(),
+    home: HomePage(),
   ));
-}
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Material(
-      child: Center(
-        child: Text(
-          "Hello World",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontFamily: "poppins",
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
 }
