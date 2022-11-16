@@ -20,4 +20,5 @@ class MyTheme {
       );
 
   static Color darkBluishColor = const Color(0xff403b58);
+  static Color creamish = const Color(0xfff5f5f5);
 }

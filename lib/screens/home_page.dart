@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_17/Models/catalog.dart';
+import 'package:flutter_17/Themes/theme.dart';
 import 'package:flutter_17/widgets/drawer.dart';
 import 'dart:convert';
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: MyTheme.creamish,
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(32.0),
@@ -46,6 +47,9 @@ class _HomePageState extends State<HomePage> {
               const CatalogHeader(
                 heading: "Catalog App",
                 subTitle: "Trending Product",
+              ),
+              const SizedBox(
+                height: 20.0,
               ),
               if (CatalogModel.product != null)
                 const Expanded(
