@@ -14,17 +14,9 @@ class NewCard extends StatelessWidget {
         leading: Image.network(product.image),
         title: Text(
           product.name,
-          // style: TextStyle(
-          //   letterSpacing: -0.5,
-          //   fontSize: 12.0,
-          // ),
         ),
         subtitle: Text(
           product.desc,
-          // style: TextStyle(
-          //   letterSpacing: -0.5,
-          //   fontSize: 12.0,
-          // ),
         ),
         trailing: Text(
           "\$${product.price}",
