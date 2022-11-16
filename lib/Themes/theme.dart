@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyTheme {
   static ThemeData get lightTheme => ThemeData(
         primarySwatch: Colors.deepPurple,
-        // fontFamily: "poppins",
+        fontFamily: "poppins",
         appBarTheme: const AppBarTheme(
           color: Colors.white,
           centerTitle: true,
@@ -18,4 +18,6 @@ class MyTheme {
   static ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
       );
+
+  static Color darkBluishColor = const Color(0xff403b58);
 }

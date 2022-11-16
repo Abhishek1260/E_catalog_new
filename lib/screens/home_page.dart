@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_17/Models/catalog.dart';
-import 'package:flutter_17/widgets/card.dart';
 import 'package:flutter_17/widgets/drawer.dart';
 import 'dart:convert';
+
+import '../widgets/catalog_header.dart';
+import '../widgets/catalog_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,53 +33,34 @@ class _HomePageState extends State<HomePage> {
     loadData();
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     backgroundColor: Colors.white,
-  //     appBar: AppBar(
-  //       title: const Text("Catalog App"),
-  //     ),
-  //     body: Padding(
-  //         padding: const EdgeInsets.all(16.0),
-  //         child: CatalogModel.product != null
-  //             ? ListView.builder(
-  //                 itemBuilder: (context, index) {
-  //                   return NewCard(product: CatalogModel.product?[index]);
-  //                 },
-  //                 itemCount: CatalogModel.product?.length,
-  //               )
-  //             : const Center(
-  //                 child: CircularProgressIndicator(),
-  //               )),
-  //     drawer: const MyDrawer(),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Catalog App"),
-      ),
-      body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: CatalogModel.product != null
-              ? GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 16.0,
-                    crossAxisSpacing: 16.0,
-                  ),
-                  itemBuilder: (context, index) {
-                    return NewCard(product: CatalogModel.product?[index]);
-                  },
-                  itemCount: CatalogModel.product?.length,
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const CatalogHeader(
+                heading: "Catalog App",
+                subTitle: "Trending Product",
+              ),
+              if (CatalogModel.product != null)
+                const Expanded(
+                  child: CatalogList(),
                 )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                )),
+              else
+                const Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
       drawer: const MyDrawer(),
     );
   }
