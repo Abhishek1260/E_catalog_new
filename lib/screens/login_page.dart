@@ -92,6 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (value.length < 6) {
                             return "password can't be less than 6";
                           }
+                          return null;
                         },
                         obscureText: true,
                         onChanged: (value) {
