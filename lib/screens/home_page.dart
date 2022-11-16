@@ -31,6 +31,29 @@ class _HomePageState extends State<HomePage> {
     loadData();
   }
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     backgroundColor: Colors.white,
+  //     appBar: AppBar(
+  //       title: const Text("Catalog App"),
+  //     ),
+  //     body: Padding(
+  //         padding: const EdgeInsets.all(16.0),
+  //         child: CatalogModel.product != null
+  //             ? ListView.builder(
+  //                 itemBuilder: (context, index) {
+  //                   return NewCard(product: CatalogModel.product?[index]);
+  //                 },
+  //                 itemCount: CatalogModel.product?.length,
+  //               )
+  //             : const Center(
+  //                 child: CircularProgressIndicator(),
+  //               )),
+  //     drawer: const MyDrawer(),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +64,12 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: CatalogModel.product != null
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16.0,
+                    crossAxisSpacing: 16.0,
+                  ),
                   itemBuilder: (context, index) {
                     return NewCard(product: CatalogModel.product?[index]);
                   },

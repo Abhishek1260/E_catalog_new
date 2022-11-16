@@ -6,26 +6,57 @@ class NewCard extends StatelessWidget {
 
   final Products product;
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Card(
+  //     elevation: 1.0,
+  //     child: ListTile(
+  //       leading: Image.network(product.image),
+  //       title: Text(
+  //         product.name,
+  //       ),
+  //       subtitle: Text(
+  //         product.desc,
+  //       ),
+  //       trailing: Text(
+  //         "\$${product.price}",
+  //         style: const TextStyle(
+  //           color: Colors.deepPurple,
+  //           fontWeight: FontWeight.w700,
+  //         ),
+  //         textScaleFactor: 1.2,
+  //       ),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       elevation: 1.0,
-      child: ListTile(
-        leading: Image.network(product.image),
-        title: Text(
+      child: GridTile(
+        header: Text(
           product.name,
         ),
-        subtitle: Text(
+        footer: Text(
           product.desc,
         ),
-        trailing: Text(
-          "\$${product.price}",
-          style: const TextStyle(
-            color: Colors.deepPurple,
-            fontWeight: FontWeight.w700,
-          ),
-          textScaleFactor: 1.2,
-        ),
+        child: Image.network(product.image),
+        // subtitle: Text(
+        //   product.desc,
+        // ),
+        // trailing: Text(
+        //   "\$${product.price}",
+        //   style: const TextStyle(
+        //     color: Colors.deepPurple,
+        //     fontWeight: FontWeight.w700,
+        //   ),
+        //   textScaleFactor: 1.2,
+        // ),
       ),
     );
   }
