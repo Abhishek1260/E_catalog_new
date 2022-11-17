@@ -17,14 +17,15 @@ class CatalogHeader extends StatelessWidget {
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.w600,
-            color: MyTheme.darkBluishColor,
+            color: Theme.of(context).accentColor,
           ),
         ),
         subTitle != null
             ? Text(
                 subTitle!,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16.0,
+                  color: Theme.of(context).accentColor,
                 ),
               )
             : const SizedBox(

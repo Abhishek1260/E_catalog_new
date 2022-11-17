@@ -35,7 +35,7 @@ class ProductDetails extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: Theme.of(context).cardColor,
                   width: context.screenWidth,
                   padding: const EdgeInsets.fromLTRB(0, 48, 0, 0),
                   child: Column(
@@ -43,14 +43,18 @@ class ProductDetails extends StatelessWidget {
                       Text(
                         product.name,
                         style: TextStyle(
-                          color: MyTheme.darkBluishColor,
+                          color: Theme.of(context).accentColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 28.0,
                         ),
                       ),
                       Text(
                         product.desc,
-                        style: Theme.of(context).textTheme.caption,
+                        style: Theme.of(context).textTheme.caption?.merge(
+                              TextStyle(
+                                color: Theme.of(context).accentColor,
+                              ),
+                            ),
                         textScaleFactor: 1.3,
                       ),
                       const SizedBox(
@@ -60,7 +64,11 @@ class ProductDetails extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           "Officia incididunt velit ad ut anim reprehenderit id ut ad laboris quis cillum. Reprehenderit magna consequat elit laborum dolore. Laboris culpa quis labore exercitation fugiat exercitation et quis adipisicing. Enim cupidatat in eu ex. Magna consectetur cillum velit laboris velit do. Pariatur reprehenderit aliquip aliqua exercitation aute aute sit commodo.",
-                          style: Theme.of(context).textTheme.caption,
+                          style: Theme.of(context).textTheme.caption?.merge(
+                                TextStyle(
+                                  color: Theme.of(context).accentColor,
+                                ),
+                              ),
                           textAlign: TextAlign.justify,
                         ),
                       ),
@@ -73,6 +81,7 @@ class ProductDetails extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
+        color: Theme.of(context).cardColor,
         padding: const EdgeInsets.all(8.0),
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
@@ -80,14 +89,14 @@ class ProductDetails extends StatelessWidget {
             Text(
               "\$${product.price}",
               style: TextStyle(
-                color: MyTheme.darkBluishColor,
-                fontSize: 20.0,
+                color: Theme.of(context).accentColor,
+                fontSize: 24.0,
                 fontWeight: FontWeight.w600,
               ),
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                backgroundColor: MyTheme.darkBluishColor,
+                backgroundColor: Theme.of(context).buttonColor,
                 shape: const StadiumBorder(),
               ),
               onPressed: () {},

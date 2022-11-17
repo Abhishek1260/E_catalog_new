@@ -20,7 +20,10 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(const Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      await Navigator.pushNamed(
+        context,
+        MyRoutes.homeRoute,
+      );
       setState(() {
         changeButton = false;
       });
@@ -32,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).canvasColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
@@ -103,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        color: Theme.of(context).buttonColor,
                         borderRadius: changeButton
                             ? BorderRadius.circular(20.0)
                             : BorderRadius.circular(8.0),
