@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_17/Models/catalog.dart';
 import 'package:flutter_17/Themes/theme.dart';
+import 'package:flutter_17/utils/routes.dart';
 import 'package:flutter_17/widgets/drawer.dart';
 import 'dart:convert';
 
@@ -38,6 +39,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamish,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: MyTheme.darkBluishColor,
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.CartRoute);
+        },
+        child: const Icon(
+          Icons.shopping_cart,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(32.0),

@@ -51,7 +51,18 @@ class ProductDetails extends StatelessWidget {
                       Text(
                         product.desc,
                         style: Theme.of(context).textTheme.caption,
-                        textScaleFactor: 1.2,
+                        textScaleFactor: 1.3,
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          "Officia incididunt velit ad ut anim reprehenderit id ut ad laboris quis cillum. Reprehenderit magna consequat elit laborum dolore. Laboris culpa quis labore exercitation fugiat exercitation et quis adipisicing. Enim cupidatat in eu ex. Magna consectetur cillum velit laboris velit do. Pariatur reprehenderit aliquip aliqua exercitation aute aute sit commodo.",
+                          style: Theme.of(context).textTheme.caption,
+                          textAlign: TextAlign.justify,
+                        ),
                       ),
                     ],
                   ),
@@ -81,7 +92,7 @@ class ProductDetails extends StatelessWidget {
               ),
               onPressed: () {},
               label: const Text(
-                "Buy",
+                "Add to Cart",
               ),
               icon: const Icon(
                 Icons.shopping_cart,

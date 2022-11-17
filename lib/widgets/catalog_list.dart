@@ -98,7 +98,7 @@ class CatalogItem extends StatelessWidget {
                       child: ElevatedButton.icon(
                         onPressed: () {},
                         icon: const Icon(
-                          CupertinoIcons.cart,
+                          Icons.shopping_cart,
                           color: Colors.white,
                           size: 16.0,
                         ),
