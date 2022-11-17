@@ -7,6 +7,7 @@ class MyTheme {
         canvasColor: creamish,
         accentColor: darkBluishColor,
         cardColor: Colors.white,
+        buttonColor: darkBluishColor,
         hintColor: darkBluishColor,
         appBarTheme: const AppBarTheme(
           color: Colors.white,
@@ -34,7 +35,7 @@ class MyTheme {
           iconTheme: IconThemeData(
             color: Colors.white,
           ),
-          foregroundColor: Colors.black87,
+          foregroundColor: Colors.white,
         ),
         brightness: Brightness.dark,
       );

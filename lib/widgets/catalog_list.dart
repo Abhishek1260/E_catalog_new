@@ -10,7 +10,7 @@ class CatalogList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.product?[index];
+        final catalog = CatalogModel.getByPos(index);
         return InkWell(
           onTap: () {
             Navigator.push(
