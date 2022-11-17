@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_17/Themes/theme.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -46,7 +44,7 @@ class _CartWidgetState extends State<CartWidget> {
           leading: Icon(Icons.done),
           trailing: IconButton(
             onPressed: null,
-            icon: Icon(CupertinoIcons.clear_thick),
+            icon: Icon(Icons.remove_circle_outline),
           ),
           title: Text("Item 1"),
         );
@@ -79,7 +77,15 @@ class CartTotal extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      "Buying not supported yet!",
+                    ),
+                  ),
+                );
+              },
               child: Text("Buy"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).buttonColor,
